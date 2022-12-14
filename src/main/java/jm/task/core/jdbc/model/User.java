@@ -32,6 +32,27 @@ public class User {
         this.age = age;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        User user = (User) o;
+        return id.equals(user.id) && name.equals(user.name) && lastName.equals(user.lastName) && age.equals(user.age);
+    }
+
+    @Override
+    public int hashCode() {
+        int res = id.hashCode();
+        res += name.hashCode();
+        res += lastName.hashCode();
+        res += age.hashCode();
+        res = 31 * res + (id.hashCode() * name.hashCode() * lastName.hashCode() * age.hashCode());
+        return res;
+    }
 
     @Override
     public String toString() {

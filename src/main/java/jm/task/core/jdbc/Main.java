@@ -4,7 +4,6 @@ import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserServiceImpl;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,15 +16,15 @@ public class Main {
         UserServiceImpl userService = new UserServiceImpl();
         userService.createUsersTable();
 
-//        for (User user : users) {
-//            userService.saveUser(user.getName(), user.getLastName(), user.getAge());
-//        }
-//
-//        for (User user : userService.getAllUsers()) {
-//            System.out.println(user);
-//        }
-//
-//        userService.cleanUsersTable();
-//        userService.dropUsersTable();
+        for (User user : users) {
+            userService.saveUser(user.getName(), user.getLastName(), user.getAge());
+        }
+
+        for (User user : userService.getAllUsers()) {
+            System.out.println(user);
+        }
+
+        userService.cleanUsersTable();
+        userService.dropUsersTable();
     }
 }
