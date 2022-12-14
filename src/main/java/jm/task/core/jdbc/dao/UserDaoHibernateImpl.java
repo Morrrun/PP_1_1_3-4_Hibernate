@@ -2,10 +2,7 @@ package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
-import org.hibernate.SQLQuery;
 import org.hibernate.Session;
-import org.hibernate.query.NativeQuery;
-import org.hibernate.query.Query;
 
 import javax.persistence.PersistenceException;
 import java.util.ArrayList;
@@ -13,7 +10,6 @@ import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
 
-    private final String INSERT_INTO = "INSERT INTO users (name, lastname, age) VALUES(%s, %s, %d)";
     public UserDaoHibernateImpl() {
     }
 
